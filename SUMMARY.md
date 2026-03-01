@@ -1,0 +1,131 @@
+# Summary
+
+* [首页](README.md)
+* 写在开头
+    * [最新发布](news.md)
+    * [应用软件安装·版本指导](linux/linux-third-select.md)
+    * [常用软件·快速安装](linux/middleware-quick-setup.md)
+* SQLServer
+    * 制度规范
+        * [mssql dba操作规范](mssql/mssql-std-dbaop.md)
+        * [T-SQL脚本规范](mssql/mssql-std-tsql.md)
+    * 基础知识
+        * [关于sqlserver的版本选择](mssql/mssql-kb-version-bit.md)
+        * [关于sqlserver的授权模式](mssql/mssql-kb-license-buy.md)
+        * [关于timeout之sqlserver篇](mssql/mssql-kb-timeout-sum.md)
+        * [关于连接池之sqlserver篇](mssql/mssql-kb-connection-pool.md)
+        * [数据库三大范式](mssql/mssql-kb-three-paradigms.md)
+        * [sqlserver隔离级别](mssql/mssql-kb-isolation-level.md)
+        * [sqlserver字符集与排序规则](mssql/mssql-kb-character-collate.md)
+        * [sqlserver新版本新特性](mssql/mssql-kb-newfeatures-history.md)
+        * [sqlserver版本功能差异](mssql/mssql-kb-fuction-diff.md)
+        * [关于索引900字节限制](mssql/mssql-kb-index-900byte.md)
+        * [execute和sp_executesql区别](mssql/mssql-kb-exec-executesql.md)
+    * 安装与升级迁移
+        * [sqlserver的CU与GDR区别](mssql/mssql-bp-cu-gdr.md)
+        * [如何迁移系统数据库](mssql/mssql-bp-master-migration.md)
+        * [如何还原系统数据库](mssql/mssql-bp-master-restore.md)
+        * [sqlserver大版本升级](mssql/mssql-bp-version-upgrade.md)
+        * [sqlserver迁移检查清单](mssql/mssql-bp-migration-checklist.md)
+        * [sqlserver实例迁移手册](mssql/mssql-bp-migration-instance.md)
+        * [利用升级助手做兼容性测试](mssql/mssql-bp-migration-assistant.md)
+    * 备份与高可用
+        * [sqlserver高可用概述](mssql/mssql-ha-sum.md)
+        * [sqlserver无域环境AlwaysOn](mssql/mssql-ha-alwayson.md)
+        * [sqlserver事务日志传送](mssql/mssql-ha-logshiping.md)
+        * [sqlserver双节点读写平衡](mssql/mssql-ha-2node.md)
+    * 性能调优
+        * [sqlserver调优--索引篇](mssql/mssql-tuning-index-art.md)
+        * [sqlserver调优--语句调优](mssql/mssql-tuning-statement-art.md)
+        * [select语句的执行顺序](mssql/mssql-tuning-select-seq.md)
+        * [读懂语句执行的统计信息](mssql/mssql-tuning-set-statistics.md)
+        * [sqlserver为什么会走错执行计划](mssql/mssql-tuning-why-wrongplan.md)
+        * [Tempdb怎么会成为性能瓶颈](mssql/mssql-tuning-why-tempdb.md)
+        * [语句调优之找茬](mssql/mssql-tuning-statement-vipabc.md)
+        * [大表频繁count的改进](mssql/mssql-tuning-count-sum.md)
+        * [不建议使用not in子查询](mssql/mssql-tuning-why-notin.md)
+    * 最佳实践
+        * [sqlcmd实用工具](mssql/mssql-bp-sqlcmd.md)
+        * [如何检测弱口令账号](mssql/mssql-bp-login-check.md)
+        * [如何清除SSMS历史记录](mssql/mssql-bp-ssms-history.md)
+        * [如何重置sa密码](mssql/mssql-bp-forget-sa.md)
+        * [如何修改默认实例端口](mssql/mssql-bp-reset-port.md)
+        * [sqlserver表分区](mssql/mssql-bp-table-partition.md)
+    * case案例
+        * [sqlserver日志采集](mssql/mssql-case-log-collect.md)
+        * [主机更名带来的问题](mssql/mssql-case-rename-servername.md)
+        * [sqlserver评估版已过期](mssql/mssql-case-evaluation-period.md)
+        * [license导致CPU异常](mssql/mssql-case-license-limit.md)
+        * [sqlserver日志无法收缩](mssql/mssql-case-why-shrinklog.md)
+        * [ag大量misaligned log IOs](mssql/mssql-case-ag-misalignedlog.md)
+        * [ag频繁切换的网络优化](mssql/mssql-case-ag-network.md)
+        * [备份流量误走业务网段](mssql/mssql-case-disable-smb.md)
+        * [升级2014遇到性能问题](mssql/mssql-case-2014-ce.md)
+        * [sqlserver安装报错1639](mssql/mssql-case-2014-1639.md)
+        * [sqlserver无法连接oracle](mssql/mssql-case-link-oracle.md)
+        * [常见的SSMS问题](mssql/mssql-case-ssms-sum.md)
+        * [Win2k8开机497天time_wait](mssql/mssql-case-497-timewait.md)
+    * script脚本
+        * [查询所有表大小](mssql/mssql-script-table-biggest.md)
+        * [找出没有主键的表](mssql/mssql-script-table-withoutpk.md)
+        * [分批复制表到目标库](mssql/mssql-script-table-copy.md)
+        * [如何删除完全重复的数据](mssql/mssql-script-delete-duplicate.md)
+        * [获取所有账号的数据库角色](mssql/mssql-script-login-getdbrole.md)
+* Redis
+    * [redis使用规范](redis/redis-std-using.md)
+    * 基础知识
+        * [redis入门篇](redis/redis-learn-abc.md)
+        * [redis用户权限管理](redis/redis-login-acl.md)
+        * [redis多密码问题](redis/redis-case-multipassword.md)
+    * 备份与高可用
+        * [redis高可用概述](redis/redis-ha-sum.md)
+        * [redis哨兵搭建](redis/redis-ha-sentinel-setup.md)
+        * [redis分片集群搭建](redis/redis-ha-cluster-setup.md)
+        * [redis分片集群管理](redis/redis-ha-cluster-manage.md)
+    * 最佳实践
+        * [redis的科学用法](redis/redis-bp-usage.md)
+        * [redis迁移方案](redis/redis-bp-live-migration.md)
+        * [将redis配置成service服务](redis/redis-bp-service-configure.md)
+        * redis缓存雪崩问题
+        * [CacheCloud可视化平台搭建](redis/redis-bp-monitor-cachecloud.md)
+        * [redis安全整改](redis/redis-bp-security.md)
+    * case案例
+        * [redis避坑指南](redis/redis-case-sum.md)
+        * [redis引发OOM Killer](redis/redis-case-oom-killer.md)
+        * [redis集群误删节点](redis/redis-case-delfolder-readd.md)
+        * [redis莫名丢key](redis/redis-case-replicaof.md)
+* Mongodb
+    * [mongodb使用规范](mongo/mongo-std-using.md)
+    * 基础知识
+        * [mongodb入门篇](mongo/mongo-learn-abc.md)
+        * [mongodb新版本新特性](mongo/mongo-kb-newfeatures-history.md)
+        * [mongodb慢查询与优化](mongo/mongo-tuning-profiling.md)
+    * 备份与高可用
+        * [mongodb备份与恢复](mongo/mongo-ha-backup-sum.md)
+        * [mongodb副本集搭建](mongo/mongo-ha-replset-setup.md)
+        * [mongodb副本集常用操作](mongo/mongo-ha-replset-op.md)
+        * [mongodb副本集更换主节点](mongo/mongo-case-replace-primary.md)
+        * [mongodb分片集群搭建](mongo/mongo-ha-sharding-setup.md)
+    * case案例
+        * [mongo双写解决TTL索引失效](mongo/mongo-case-ttl.md)
+        * [mongo认证机制导致的连接失败](mongo/mongo-case-authschema.md)
+        * [磁盘io导致的mongo副本集延迟](mongo/mongo-case-replset-tuning.md)
+        * [mongo碎片过大导致磁盘告警](mongo/mongo-case-disk-compact.md)
+        * [mongo避坑指南](mongo/mongo-case-sum.md)
+        * [mongo安全整改](mongo/mongo-bp-security.md)
+* PostgreSQL
+    * [pg使用规范](postgresql/pg-std-using.md)
+    * 基础知识
+        * [pg的安装](postgresql/pg-learn-install.md)
+        * [pg入门篇](postgresql/pg-learn-abc.md)
+        * pg配置文件详解
+    * 备份与高可用
+        * [pg的备份与恢复](postgresql/pg-backup-restore.md)
+        * [pg主从流复制搭建](postgresql/pg-ha-replication.md)
+        * [pg高可用概述](postgresql/pg-ha-sum.md)
+        * pg高可用之Repmgr
+        * [pg高可用之Patrnoi](postgresql/pg-ha-patroni.md)
+    * 最佳实践
+        * 如何监控PostgreSQL
+        * 面向数仓的GreenPlum
+

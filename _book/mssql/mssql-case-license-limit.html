@@ -1,0 +1,2113 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>license导致CPU异常 · 数据库笔记,dbnotes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="amberwww">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mssql-case-why-shrinklog.html" />
+    
+    
+    <link rel="prev" href="mssql-case-evaluation-period.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../icon/home.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../icon/home.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    首页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    写在开头
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../news.html">
+            
+                <a href="../news.html">
+            
+                    
+                    最新发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../linux/linux-third-select.html">
+            
+                <a href="../linux/linux-third-select.html">
+            
+                    
+                    应用软件安装·版本指导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../linux/middleware-quick-setup.html">
+            
+                <a href="../linux/middleware-quick-setup.html">
+            
+                    
+                    常用软件·快速安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    SQLServer
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    制度规范
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="mssql-std-dbaop.html">
+            
+                <a href="mssql-std-dbaop.html">
+            
+                    
+                    mssql dba操作规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="mssql-std-tsql.html">
+            
+                <a href="mssql-std-tsql.html">
+            
+                    
+                    T-SQL脚本规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="mssql-kb-version-bit.html">
+            
+                <a href="mssql-kb-version-bit.html">
+            
+                    
+                    关于sqlserver的版本选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="mssql-kb-license-buy.html">
+            
+                <a href="mssql-kb-license-buy.html">
+            
+                    
+                    关于sqlserver的授权模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="mssql-kb-timeout-sum.html">
+            
+                <a href="mssql-kb-timeout-sum.html">
+            
+                    
+                    关于timeout之sqlserver篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="mssql-kb-connection-pool.html">
+            
+                <a href="mssql-kb-connection-pool.html">
+            
+                    
+                    关于连接池之sqlserver篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="mssql-kb-three-paradigms.html">
+            
+                <a href="mssql-kb-three-paradigms.html">
+            
+                    
+                    数据库三大范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="mssql-kb-isolation-level.html">
+            
+                <a href="mssql-kb-isolation-level.html">
+            
+                    
+                    sqlserver隔离级别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="mssql-kb-character-collate.html">
+            
+                <a href="mssql-kb-character-collate.html">
+            
+                    
+                    sqlserver字符集与排序规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.8" data-path="mssql-kb-newfeatures-history.html">
+            
+                <a href="mssql-kb-newfeatures-history.html">
+            
+                    
+                    sqlserver新版本新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.9" data-path="mssql-kb-fuction-diff.html">
+            
+                <a href="mssql-kb-fuction-diff.html">
+            
+                    
+                    sqlserver版本功能差异
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.10" data-path="mssql-kb-index-900byte.html">
+            
+                <a href="mssql-kb-index-900byte.html">
+            
+                    
+                    关于索引900字节限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.11" data-path="mssql-kb-exec-executesql.html">
+            
+                <a href="mssql-kb-exec-executesql.html">
+            
+                    
+                    execute和sp_executesql区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" >
+            
+                <span>
+            
+                    
+                    安装与升级迁移
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="mssql-bp-cu-gdr.html">
+            
+                <a href="mssql-bp-cu-gdr.html">
+            
+                    
+                    sqlserver的CU与GDR区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="mssql-bp-master-migration.html">
+            
+                <a href="mssql-bp-master-migration.html">
+            
+                    
+                    如何迁移系统数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="mssql-bp-master-restore.html">
+            
+                <a href="mssql-bp-master-restore.html">
+            
+                    
+                    如何还原系统数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="mssql-bp-version-upgrade.html">
+            
+                <a href="mssql-bp-version-upgrade.html">
+            
+                    
+                    sqlserver大版本升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="mssql-bp-migration-checklist.html">
+            
+                <a href="mssql-bp-migration-checklist.html">
+            
+                    
+                    sqlserver迁移检查清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="mssql-bp-migration-instance.html">
+            
+                <a href="mssql-bp-migration-instance.html">
+            
+                    
+                    sqlserver实例迁移手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="mssql-bp-migration-assistant.html">
+            
+                <a href="mssql-bp-migration-assistant.html">
+            
+                    
+                    利用升级助手做兼容性测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    备份与高可用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="mssql-ha-sum.html">
+            
+                <a href="mssql-ha-sum.html">
+            
+                    
+                    sqlserver高可用概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="mssql-ha-alwayson.html">
+            
+                <a href="mssql-ha-alwayson.html">
+            
+                    
+                    sqlserver无域环境AlwaysOn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="mssql-ha-logshiping.html">
+            
+                <a href="mssql-ha-logshiping.html">
+            
+                    
+                    sqlserver事务日志传送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="mssql-ha-2node.html">
+            
+                <a href="mssql-ha-2node.html">
+            
+                    
+                    sqlserver双节点读写平衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" >
+            
+                <span>
+            
+                    
+                    性能调优
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="mssql-tuning-index-art.html">
+            
+                <a href="mssql-tuning-index-art.html">
+            
+                    
+                    sqlserver调优--索引篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="mssql-tuning-statement-art.html">
+            
+                <a href="mssql-tuning-statement-art.html">
+            
+                    
+                    sqlserver调优--语句调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.3" data-path="mssql-tuning-select-seq.html">
+            
+                <a href="mssql-tuning-select-seq.html">
+            
+                    
+                    select语句的执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.4" data-path="mssql-tuning-set-statistics.html">
+            
+                <a href="mssql-tuning-set-statistics.html">
+            
+                    
+                    读懂语句执行的统计信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.5" data-path="mssql-tuning-why-wrongplan.html">
+            
+                <a href="mssql-tuning-why-wrongplan.html">
+            
+                    
+                    sqlserver为什么会走错执行计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.6" data-path="mssql-tuning-why-tempdb.html">
+            
+                <a href="mssql-tuning-why-tempdb.html">
+            
+                    
+                    Tempdb怎么会成为性能瓶颈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.7" data-path="mssql-tuning-statement-vipabc.html">
+            
+                <a href="mssql-tuning-statement-vipabc.html">
+            
+                    
+                    语句调优之找茬
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.8" data-path="mssql-tuning-count-sum.html">
+            
+                <a href="mssql-tuning-count-sum.html">
+            
+                    
+                    大表频繁count的改进
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.9" data-path="mssql-tuning-why-notin.html">
+            
+                <a href="mssql-tuning-why-notin.html">
+            
+                    
+                    不建议使用not in子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" >
+            
+                <span>
+            
+                    
+                    最佳实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="mssql-bp-sqlcmd.html">
+            
+                <a href="mssql-bp-sqlcmd.html">
+            
+                    
+                    sqlcmd实用工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="mssql-bp-login-check.html">
+            
+                <a href="mssql-bp-login-check.html">
+            
+                    
+                    如何检测弱口令账号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.3" data-path="mssql-bp-ssms-history.html">
+            
+                <a href="mssql-bp-ssms-history.html">
+            
+                    
+                    如何清除SSMS历史记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.4" data-path="mssql-bp-forget-sa.html">
+            
+                <a href="mssql-bp-forget-sa.html">
+            
+                    
+                    如何重置sa密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.5" data-path="mssql-bp-reset-port.html">
+            
+                <a href="mssql-bp-reset-port.html">
+            
+                    
+                    如何修改默认实例端口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.6" data-path="mssql-bp-table-partition.html">
+            
+                <a href="mssql-bp-table-partition.html">
+            
+                    
+                    sqlserver表分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" >
+            
+                <span>
+            
+                    
+                    case案例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1" data-path="mssql-case-log-collect.html">
+            
+                <a href="mssql-case-log-collect.html">
+            
+                    
+                    sqlserver日志采集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2" data-path="mssql-case-rename-servername.html">
+            
+                <a href="mssql-case-rename-servername.html">
+            
+                    
+                    主机更名带来的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.3" data-path="mssql-case-evaluation-period.html">
+            
+                <a href="mssql-case-evaluation-period.html">
+            
+                    
+                    sqlserver评估版已过期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.7.4" data-path="mssql-case-license-limit.html">
+            
+                <a href="mssql-case-license-limit.html">
+            
+                    
+                    license导致CPU异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.5" data-path="mssql-case-why-shrinklog.html">
+            
+                <a href="mssql-case-why-shrinklog.html">
+            
+                    
+                    sqlserver日志无法收缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.6" data-path="mssql-case-ag-misalignedlog.html">
+            
+                <a href="mssql-case-ag-misalignedlog.html">
+            
+                    
+                    ag大量misaligned log IOs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.7" data-path="mssql-case-ag-network.html">
+            
+                <a href="mssql-case-ag-network.html">
+            
+                    
+                    ag频繁切换的网络优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.8" data-path="mssql-case-disable-smb.html">
+            
+                <a href="mssql-case-disable-smb.html">
+            
+                    
+                    备份流量误走业务网段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.9" data-path="mssql-case-2014-ce.html">
+            
+                <a href="mssql-case-2014-ce.html">
+            
+                    
+                    升级2014遇到性能问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.10" data-path="mssql-case-2014-1639.html">
+            
+                <a href="mssql-case-2014-1639.html">
+            
+                    
+                    sqlserver安装报错1639
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.11" data-path="mssql-case-link-oracle.html">
+            
+                <a href="mssql-case-link-oracle.html">
+            
+                    
+                    sqlserver无法连接oracle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.12" data-path="mssql-case-ssms-sum.html">
+            
+                <a href="mssql-case-ssms-sum.html">
+            
+                    
+                    常见的SSMS问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.13" data-path="mssql-case-497-timewait.html">
+            
+                <a href="mssql-case-497-timewait.html">
+            
+                    
+                    Win2k8开机497天time_wait
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" >
+            
+                <span>
+            
+                    
+                    script脚本
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.1" data-path="mssql-script-table-biggest.html">
+            
+                <a href="mssql-script-table-biggest.html">
+            
+                    
+                    查询所有表大小
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.2" data-path="mssql-script-table-withoutpk.html">
+            
+                <a href="mssql-script-table-withoutpk.html">
+            
+                    
+                    找出没有主键的表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.3" data-path="mssql-script-table-copy.html">
+            
+                <a href="mssql-script-table-copy.html">
+            
+                    
+                    分批复制表到目标库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.4" data-path="mssql-script-delete-duplicate.html">
+            
+                <a href="mssql-script-delete-duplicate.html">
+            
+                    
+                    如何删除完全重复的数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.5" data-path="mssql-script-login-getdbrole.html">
+            
+                <a href="mssql-script-login-getdbrole.html">
+            
+                    
+                    获取所有账号的数据库角色
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../redis/redis-std-using.html">
+            
+                <a href="../redis/redis-std-using.html">
+            
+                    
+                    redis使用规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../redis/redis-learn-abc.html">
+            
+                <a href="../redis/redis-learn-abc.html">
+            
+                    
+                    redis入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../redis/redis-login-acl.html">
+            
+                <a href="../redis/redis-login-acl.html">
+            
+                    
+                    redis用户权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../redis/redis-case-multipassword.html">
+            
+                <a href="../redis/redis-case-multipassword.html">
+            
+                    
+                    redis多密码问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    备份与高可用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../redis/redis-ha-sum.html">
+            
+                <a href="../redis/redis-ha-sum.html">
+            
+                    
+                    redis高可用概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../redis/redis-ha-sentinel-setup.html">
+            
+                <a href="../redis/redis-ha-sentinel-setup.html">
+            
+                    
+                    redis哨兵搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="../redis/redis-ha-cluster-setup.html">
+            
+                <a href="../redis/redis-ha-cluster-setup.html">
+            
+                    
+                    redis分片集群搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.4" data-path="../redis/redis-ha-cluster-manage.html">
+            
+                <a href="../redis/redis-ha-cluster-manage.html">
+            
+                    
+                    redis分片集群管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" >
+            
+                <span>
+            
+                    
+                    最佳实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../redis/redis-bp-usage.html">
+            
+                <a href="../redis/redis-bp-usage.html">
+            
+                    
+                    redis的科学用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../redis/redis-bp-live-migration.html">
+            
+                <a href="../redis/redis-bp-live-migration.html">
+            
+                    
+                    redis迁移方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../redis/redis-bp-service-configure.html">
+            
+                <a href="../redis/redis-bp-service-configure.html">
+            
+                    
+                    将redis配置成service服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" >
+            
+                <span>
+            
+                    
+                    redis缓存雪崩问题
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.5" data-path="../redis/redis-bp-monitor-cachecloud.html">
+            
+                <a href="../redis/redis-bp-monitor-cachecloud.html">
+            
+                    
+                    CacheCloud可视化平台搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.6" data-path="../redis/redis-bp-security.html">
+            
+                <a href="../redis/redis-bp-security.html">
+            
+                    
+                    redis安全整改
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" >
+            
+                <span>
+            
+                    
+                    case案例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../redis/redis-case-sum.html">
+            
+                <a href="../redis/redis-case-sum.html">
+            
+                    
+                    redis避坑指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../redis/redis-case-oom-killer.html">
+            
+                <a href="../redis/redis-case-oom-killer.html">
+            
+                    
+                    redis引发OOM Killer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../redis/redis-case-delfolder-readd.html">
+            
+                <a href="../redis/redis-case-delfolder-readd.html">
+            
+                    
+                    redis集群误删节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="../redis/redis-case-replicaof.html">
+            
+                <a href="../redis/redis-case-replicaof.html">
+            
+                    
+                    redis莫名丢key
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Mongodb
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../mongo/mongo-std-using.html">
+            
+                <a href="../mongo/mongo-std-using.html">
+            
+                    
+                    mongodb使用规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../mongo/mongo-learn-abc.html">
+            
+                <a href="../mongo/mongo-learn-abc.html">
+            
+                    
+                    mongodb入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../mongo/mongo-kb-newfeatures-history.html">
+            
+                <a href="../mongo/mongo-kb-newfeatures-history.html">
+            
+                    
+                    mongodb新版本新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../mongo/mongo-tuning-profiling.html">
+            
+                <a href="../mongo/mongo-tuning-profiling.html">
+            
+                    
+                    mongodb慢查询与优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    备份与高可用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../mongo/mongo-ha-backup-sum.html">
+            
+                <a href="../mongo/mongo-ha-backup-sum.html">
+            
+                    
+                    mongodb备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../mongo/mongo-ha-replset-setup.html">
+            
+                <a href="../mongo/mongo-ha-replset-setup.html">
+            
+                    
+                    mongodb副本集搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../mongo/mongo-ha-replset-op.html">
+            
+                <a href="../mongo/mongo-ha-replset-op.html">
+            
+                    
+                    mongodb副本集常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="../mongo/mongo-case-replace-primary.html">
+            
+                <a href="../mongo/mongo-case-replace-primary.html">
+            
+                    
+                    mongodb副本集更换主节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="../mongo/mongo-ha-sharding-setup.html">
+            
+                <a href="../mongo/mongo-ha-sharding-setup.html">
+            
+                    
+                    mongodb分片集群搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    case案例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../mongo/mongo-case-ttl.html">
+            
+                <a href="../mongo/mongo-case-ttl.html">
+            
+                    
+                    mongo双写解决TTL索引失效
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../mongo/mongo-case-authschema.html">
+            
+                <a href="../mongo/mongo-case-authschema.html">
+            
+                    
+                    mongo认证机制导致的连接失败
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../mongo/mongo-case-replset-tuning.html">
+            
+                <a href="../mongo/mongo-case-replset-tuning.html">
+            
+                    
+                    磁盘io导致的mongo副本集延迟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../mongo/mongo-case-disk-compact.html">
+            
+                <a href="../mongo/mongo-case-disk-compact.html">
+            
+                    
+                    mongo碎片过大导致磁盘告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../mongo/mongo-case-sum.html">
+            
+                <a href="../mongo/mongo-case-sum.html">
+            
+                    
+                    mongo避坑指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.6" data-path="../mongo/mongo-bp-security.html">
+            
+                <a href="../mongo/mongo-bp-security.html">
+            
+                    
+                    mongo安全整改
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    PostgreSQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../postgresql/pg-std-using.html">
+            
+                <a href="../postgresql/pg-std-using.html">
+            
+                    
+                    pg使用规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../postgresql/pg-learn-install.html">
+            
+                <a href="../postgresql/pg-learn-install.html">
+            
+                    
+                    pg的安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../postgresql/pg-learn-abc.html">
+            
+                <a href="../postgresql/pg-learn-abc.html">
+            
+                    
+                    pg入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" >
+            
+                <span>
+            
+                    
+                    pg配置文件详解
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    备份与高可用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../postgresql/pg-backup-restore.html">
+            
+                <a href="../postgresql/pg-backup-restore.html">
+            
+                    
+                    pg的备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../postgresql/pg-ha-replication.html">
+            
+                <a href="../postgresql/pg-ha-replication.html">
+            
+                    
+                    pg主从流复制搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3" data-path="../postgresql/pg-ha-sum.html">
+            
+                <a href="../postgresql/pg-ha-sum.html">
+            
+                    
+                    pg高可用概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.4" >
+            
+                <span>
+            
+                    
+                    pg高可用之Repmgr
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.5" data-path="../postgresql/pg-ha-patroni.html">
+            
+                <a href="../postgresql/pg-ha-patroni.html">
+            
+                    
+                    pg高可用之Patrnoi
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <span>
+            
+                    
+                    最佳实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" >
+            
+                <span>
+            
+                    
+                    如何监控PostgreSQL
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" >
+            
+                <span>
+            
+                    
+                    面向数仓的GreenPlum
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >license导致CPU异常</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#license&#x5BFC;&#x81F4;cpu&#x5F02;&#x5E38;"><b></b>license&#x5BFC;&#x81F4;CPU&#x5F02;&#x5E38;</a></li></ul></div><a href="#license&#x5BFC;&#x81F4;cpu&#x5F02;&#x5E38;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="license&#x5BFC;&#x81F4;cpu&#x5F02;&#x5E38;"><a name="license&#x5BFC;&#x81F4;cpu&#x5F02;&#x5E38;" class="anchor-navigation-ex-anchor" href="#license&#x5BFC;&#x81F4;cpu&#x5F02;&#x5E38;"><i class="fa fa-link" aria-hidden="true"></i></a>license&#x5BFC;&#x81F4;CPU&#x5F02;&#x5E38;</h1>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; www.dbnotes.cn 2026 All Rights Reserved</span><span class="footer-modification">&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;
+2026-03-01 21:38:22
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mssql-case-evaluation-period.html" class="navigation navigation-prev " aria-label="Previous page: sqlserver评估版已过期">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mssql-case-why-shrinklog.html" class="navigation navigation-next " aria-label="Next page: sqlserver日志无法收缩">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"license导致CPU异常","level":"1.3.7.4","depth":3,"next":{"title":"sqlserver日志无法收缩","level":"1.3.7.5","depth":3,"path":"mssql/mssql-case-why-shrinklog.md","ref":"mssql/mssql-case-why-shrinklog.md","articles":[]},"previous":{"title":"sqlserver评估版已过期","level":"1.3.7.3","depth":3,"path":"mssql/mssql-case-evaluation-period.md","ref":"mssql/mssql-case-evaluation-period.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","search-pro","-highlight","prism@^2.1.0","prism-themes","-default-theme","theme-comscore","splitter","tbfed-pagefooter","expandable-chapters","hide-element","favicon","code","sectionx","flexible-alerts","ancre-navigation","donate@^1.0.2","pageview-count","auto-scroll-table","livereload"],"root":".","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy www.dbnotes.cn 2026","modify_label":"更新时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"livereload":{},"splitter":{},"search-pro":{},"auto-scroll-table":{},"code":{"copyButtons":true},"donate":{"alipay":"https://static.dbnotes.cn/image/QRcode/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://static.dbnotes.cn/image/QRcode/weixin.jpg","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"pdf":{"pageNumbers":true,"fontFamily":"Arial","fontSize":12,"paperSize":"a4","margin":{"right":62,"left":62,"top":56,"bottom":56}},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"favicon":{"shortcut":"icon/home.ico","bookmark":"icon/home.ico"},"theme-comscore":{},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"amberwww","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据库笔记,dbnotes","language":"zh-hans","output.name":"site","gitbook":"3.2.3"},"file":{"path":"mssql/mssql-case-license-limit.md","mtime":"2026-03-01T13:38:22.548Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-03-01T13:46:05.039Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
